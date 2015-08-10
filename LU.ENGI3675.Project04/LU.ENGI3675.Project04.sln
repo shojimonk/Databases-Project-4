@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LU.ENGI3675.Project04", "LU.ENGI3675.Project04\LU.ENGI3675.Project04.csproj", "{F0E27ECD-3550-409D-ACB8-BBFD8F8207C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LU.ENGI3675.Project04.Tests", "LU.ENGI3675.Project04.Tests\LU.ENGI3675.Project04.Tests.csproj", "{FC2C62D3-2B2F-405A-A4EA-25FC430B5993}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C02F158B-A1AC-48F5-BC2B-2C3C0EC5F87E}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "LU.ENGI3675.Project04.Documents", "LU.ENGI3675.Project04.Documents\LU.ENGI3675.Project04.Documents.shfbproj", "{CEBAD2BE-F7A4-445C-9477-BF9F4445CE8F}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://shoji-studios.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = LU.ENGI3675.Project04.Tests\\LU.ENGI3675.Project04.Tests.csproj
+		SccProjectName1 = LU.ENGI3675.Project04.Tests
+		SccLocalPath1 = LU.ENGI3675.Project04.Tests
+		SccProjectUniqueName2 = LU.ENGI3675.Project04\\LU.ENGI3675.Project04.csproj
+		SccProjectName2 = LU.ENGI3675.Project04
+		SccLocalPath2 = LU.ENGI3675.Project04
+		SccProjectUniqueName3 = LU.ENGI3675.Project04.Documents\\LU.ENGI3675.Project04.Documents.shfbproj
+		SccProjectName3 = LU.ENGI3675.Project04.Documents
+		SccLocalPath3 = LU.ENGI3675.Project04.Documents
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0E27ECD-3550-409D-ACB8-BBFD8F8207C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0E27ECD-3550-409D-ACB8-BBFD8F8207C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0E27ECD-3550-409D-ACB8-BBFD8F8207C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0E27ECD-3550-409D-ACB8-BBFD8F8207C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC2C62D3-2B2F-405A-A4EA-25FC430B5993}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC2C62D3-2B2F-405A-A4EA-25FC430B5993}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC2C62D3-2B2F-405A-A4EA-25FC430B5993}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC2C62D3-2B2F-405A-A4EA-25FC430B5993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEBAD2BE-F7A4-445C-9477-BF9F4445CE8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEBAD2BE-F7A4-445C-9477-BF9F4445CE8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEBAD2BE-F7A4-445C-9477-BF9F4445CE8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

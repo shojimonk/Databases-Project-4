@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Generate" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <!-- Sandcastle Tools MSBuild Tasks.  http://SHFB.CodePlex.com -->
+  <UsingTask TaskName="Microsoft.Ddue.Tools.MSBuild.MRefBuilder" AssemblyFile="C:\Program Files\EWSoftware\Sandcastle Help File Builder\\MRefBuilder.exe" />
+  <UsingTask TaskName="Microsoft.Ddue.Tools.MSBuild.XslTransform" AssemblyFile="C:\Program Files\EWSoftware\Sandcastle Help File Builder\\XslTransform.exe" />
+  <!-- Task properties -->
+  <PropertyGroup>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AddXamlSyntaxData>
+    </AddXamlSyntaxData>
+    <WorkingFolder>c:\users\shoji\documents\visual studio 2013\Projects\LU.ENGI3675.Project04\LU.ENGI3675.Project04.Documentation\Help\Working\</WorkingFolder>
+    <ReferencePath Condition=" '$(ReferencePath)' == '' ">
+    </ReferencePath>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+  <!-- The common targets require OutputPath to be valid -->
+  <PropertyGroup>
+    <OutputPath>.\</OutputPath>
+  </PropertyGroup>
+  <!-- Import the common targets -->
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <!-- This defines the dependencies for the Generate target -->
+  <PropertyGroup>
+    <GenerateDependsOn>
+			ResolveReferences;
+			BeforeGenerateRefInfo;
+			GenerateRefInfo;
+			AfterGenerateRefInfo
+		</GenerateDependsOn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LU.ENGI3675.Project04">
+      <HintPath>c:\users\shoji\documents\visual studio 2013\Projects\LU.ENGI3675.Project04\LU.ENGI3675.Project04\bin\LU.ENGI3675.Project04.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+    <Reference Include="Npgsql, Version=2.2.5.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>c:\users\shoji\documents\visual studio 2013\Projects\LU.ENGI3675.Project04\LU.ENGI3675.Project04\..\packages\Npgsql.2.2.5\lib\net45\Npgsql.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Assembly Include="c:\users\shoji\documents\visual studio 2013\Projects\LU.ENGI3675.Project04\LU.ENGI3675.Project04.Tests\bin\Debug\LU.ENGI3675.Project04.Tests.dll" />
+    <Assembly Include="c:\users\shoji\documents\visual studio 2013\Projects\LU.ENGI3675.Project04\LU.ENGI3675.Project04\bin\LU.ENGI3675.Project04.dll" />
+  </ItemGroup>
+  <Target Name="Generate" DependsOnTargets="$(GenerateDependsOn)" />
+  <!-- The Generate Ref Info target -->
+  <Target Name="GenerateRefInfo">
+    <!-- Run MRefBuilder.  Reference build items are added to this template by the build process.  The
+				 ResolveReferences dependency target will resolve them to absolute paths that can be passed to
+				 MRefBuilder using the /dep command line option.  Assembly build items are added by the build
+				 process to define the assemblies to reflect. -->
+    <Microsoft.Ddue.Tools.MSBuild.MRefBuilder WorkingFolder="$(WorkingFolder)" ConfigurationFile="MRefBuilder.config" ReflectionFilename="reflection.org" Assemblies="@(Assembly)" References="@(ReferencePath)" />
+    <!-- Merge duplicate topics (if any) and add XAML syntax data if needed -->
+    <Copy SourceFiles="reflection.org" DestinationFiles="reflection.all" />
+    <Microsoft.Ddue.Tools.MSBuild.XslTransform WorkingFolder="$(WorkingFolder)" Transformations="~\ProductionTransforms\MergeDuplicates.xsl$(AddXamlSyntaxData)" InputFile="reflection.all" OutputFile="reflection.org" />
+  </Target>
+  <!-- The following targets may be overridden or replaced to perform additional processing. -->
+  <Target Name="BeforeGenerateRefInfo" />
+  <Target Name="AfterGenerateRefInfo" />
+</Project>
